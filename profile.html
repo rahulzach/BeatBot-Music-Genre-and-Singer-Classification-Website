@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - BeatBot</title>
+     <title>User Profile Picture Upload</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="home.html" class="logo">BeatBot</a>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+      
+      
+      <div class="profile-picture-container">
+    <label for="profile-picture-input" class="profile-picture-label">
+      <img src="default-avatar.png"  class="profile-picture">
+      <span class="upload-text">Upload Picture</span>
+    </label>
+    <input type="file" id="profile-picture-input" accept="image/*" onchange="displayPreview(event)">
+  </div>
+
+  <script>
+    function displayPreview(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function () {
+        const preview = document.querySelector('.profile-picture');
+        preview.src = reader.result;
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+     <div class="row">
+  <div class="input-group">
+    <label class="label">First Name</label>
+    <input autocomplete="off" name="FirstName" id="FirstName" class="input" type="text">
+  </div>
+
+  <div class="input-group">
+    <label class="label">Middle Name</label>
+    <input autocomplete="off" name="MiddleName" id="MiddleName" class="input" type="text">
+  </div>
+
+  <div class="input-group">
+    <label class="label">Last Name</label>
+    <input autocomplete="off" name="LastName" id="LastName" class="input" type="text">
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-group">
+    <label class="label">Age</label>
+    <input autocomplete="off" name="Age" id="Age" class="input" type="number">
+  </div>
+
+  <div class="input-group">
+    <label class="label">Gender</label>
+    <select class="input" id="Gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+</div>
+ 
+   
+   
+  </header>
+    
+    

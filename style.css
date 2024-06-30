@@ -1,0 +1,303 @@
+
+body {
+  height: 1320PX;
+font-family: 'Inter', sans-serif;
+margin: 0;
+background-size: cover; 
+background-position: top; 
+background-repeat: no-repeat; 
+color: white;
+font-family: 'Inter', sans-serif;
+margin: 0;
+padding: 0;
+
+background: linear-gradient(to BOTTOM, hsl(0, 0%, 10%), hsl(0 0% 10%));
+color: white;
+}
+
+h1{
+  color: #1ed760;
+}
+
+p{
+  color: #9e9e9e;
+}
+
+p1{
+  color: #1ed760;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+div{
+color: #1ed760;
+margin-top: 40px;;
+font-size: 25px;
+font-weight:Medium;
+font-family: 'Inter',sans-serif;
+
+text-align: center;
+}
+
+header {
+padding: 30px ;
+font-size: 20px;
+background: linear-gradient(to BOTTOM, hsl(0, 0%, 12%), hsl(0,0%,10%));
+
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 9600px;
+margin: 0 auto;
+}
+
+.logo {
+font-size: 28px;
+font-weight: bold;
+}
+
+nav ul {
+list-style: none;
+display: flex;
+margin: 0;
+padding: 0;
+}
+
+nav li {
+margin-left: 20px;
+}
+
+nav a {
+color: #adadad;
+font-size: 20px;
+text-decoration:none;
+font-weight: bold;
+font-family: 'Inter',sans-serif;
+}
+
+main {
+max-width: 960px;
+margin: 200px auto 0;
+text-align: center;
+}
+
+h1 {
+font-size: 57px;
+text-align: center;
+margin-bottom: 20px;
+}
+
+h2 {
+  color: #cfcfcf;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+  
+p {
+font-size: 23px;
+margin-bottom: 40px;
+  font-weight: 5;
+line-height: 1.5;
+}
+
+.record-button {
+width: 200px;
+height: 200px;
+border-radius: 50%; /* Keep the circular shape */
+margin: 0 auto;
+/* Add more space between the button and the preceding paragraph */
+margin-top: 50px; /* Adjust this value as needed *
+
+/* Apply a radial gradient background */
+background-color: radial-gradient(circle, #414040 0%, #323232 100%);
+
+/* Add a box shadow */
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+background-image:url(Images/musicnote.png); 
+background-size: contain; /* Resize the image to fit the button */
+background-position: center; /* Center the image inside the button */
+background-repeat: no-repeat;
+transition: background-color 0.3s ease, transform 0.3s ease;
+  
+}
+
+
+.form-container {
+width: 350px;
+height: 500px;
+background: linear-gradient(to BOTTOM, #1271FF, #0D4CAA);
+margin-left: 320px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 10px;
+box-sizing: border-box;
+padding: 20px 30px;
+  margin-top: 0px;
+  
+  
+}
+
+.title {
+text-align: center;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+margin: 10px 0 30px 0;
+font-size: 28px;
+font-weight: 800;
+}
+
+.form {
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 18px;
+margin-bottom: 15px;
+}
+
+
+.page-link {
+text-decoration: underline;
+margin: 0;
+text-align: end;
+color: gainsboro;
+text-decoration-color: gainsboro;
+}
+
+.page-link-label {
+cursor: pointer;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+font-size: 9px;
+font-weight: 700;
+}
+
+.page-link-label:hover {
+color: #000;
+}
+
+.form-btn {
+padding: 10px 15px;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+border-radius: 20px;
+border: 0 !important;
+outline: 0 !important;
+background: gainsboro ;
+color: rgb(255, 0, 0);
+cursor: pointer;
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-btn:active {
+box-shadow: none;
+}
+
+.sign-up-label {
+margin: 0;
+font-size: 10px;
+color: gainsboro;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.sign-up-link {
+margin-left: 1px;
+font-size: 11px;
+text-decoration: underline;
+text-decoration-color: black;
+color: black;
+cursor: pointer;
+font-weight: 800;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons-container {
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+margin-top: 20px;
+gap: 15px;
+}
+
+.apple-login-button,
+  .google-login-button {
+border-radius: 20px;
+box-sizing: border-box;
+padding: 10px 15px;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+font-size: 11px;
+gap: 5px;
+}
+
+.apple-login-button {
+background-color: #000;
+color: #fff;
+border: 2px solid #000;
+}
+
+.google-login-button {
+border: 2px solid #747474;
+}
+
+.apple-icon,
+  .google-icon {
+font-size: 18px;
+margin-bottom: 1px;
+}
+
+
+
+
+
+/* CSS for adjusting button spacing */
+button {
+  margin-top: 10px; /* Add margin above the button */
+  margin-bottom: 10px; /* Add margin below the button */
+  margin-right: 10px;
+}
+
+
+
+.btn {
+  background-color: #1ed760;
+  padding: 14px 40px;
+  color: #252525;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px dashed #1ed760;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: .4s;
+ }
+ 
+ .btn span:last-child {
+  display: none;
+ }
+ 
+ .btn:hover {
+  transition: .4s;
+  border: 2px dashed #1ed760;
+  background-color: #1f1f1f;
+  color: #1ed760;
+ }
+ 
+ .btn:active {
+  background-color: #1ed760;
+ }
+
+
+
+

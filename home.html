@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - BeatBot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transitions.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home.html" class="logo">BeatBot</a>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="login.html">SignOut</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Record The Audio.</h1>
+        <p>Experience the power of audio analysis with our cutting-edge platform. Upload your audio file to uncover the identity of the singer or delve into the intricate world of music genres. Our advanced algorithms ensure precise identification, providing you with invaluable insights into your audio content."</p>
+        <p>Input can only be .wav files.</p>
+        
+        <!-- Add audio upload option -->
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input class="btm" type="file" id="voiceInput" accept=".wav" name="voiceFile">
+            <!-- Add button to call the upload function -->
+            <button type="button" onclick="uploadVoice()">Upload Audio</button>
+        </form>
+
+        <!-- Add button for genre recognition -->
+        <button class="btn" id="genreButton" onclick="performGenreRecognition()">Genre Recognition</button>
+        <button class="btn" id="speakerButton" onclick="performSpeakerIdentification()">Speaker Identification</button>
+
+        <!-- Placeholder for displaying the result -->
+        <div id="output"></div>
+    </main>
+
+    <!-- JavaScript code -->
+    <script>
+        // Function to upload voice file
+        function uploadVoice() {
+            const fileInput = document.getElementById('voiceInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file.');
+                return;
+            }
+
+            const formData = new FormData(document.getElementById('uploadForm'));
+
+            fetch('http://localhost:5000/upload_audio', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Display any response from the server
+                    console.log(data);
+                    document.getElementById('output').innerHTML = data.message;
+                })
+                .catch(error => {
+                    console.error('Error uploading file:', error);
+                });
+        }
+
+        // Function to trigger genre recognition
+        function performGenreRecognition() {
+            const fileInput = document.getElementById('voiceInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('voiceFile', file);
+
+            fetch('http://localhost:5000/perform_genre_recognition', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display any response from the server
+                console.log(data);
+                document.getElementById('output').innerHTML = "Prediction: " + data.prediction;
+            })
+            .catch(error => {
+                console.error('Error performing genre recognition:', error);
+            });
+        }
+
+        // Function to trigger speaker identification
+        function performSpeakerIdentification() {
+            const fileInput = document.getElementById('voiceInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                alert('Please select a file.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('voiceFile', file);
+
+            fetch('http://localhost:5000/perform_speaker_identification', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display any response from the server
+                console.log(data);
+                if (data.predicted_speaker === "Lewis Capaldi") {
+                    window.location.href = 'help.html';
+                }
+                else if(data.predicted_speaker === "Adele Laurie Blue Adkins"){
+                    window.location.href = 'adele.html';
+
+                }
+                else{
+                    document.getElementById('output').innerHTML = "Predicted Speaker: " + data.predicted_speake; "Accuracy:" + data.accuracy;
+                }
+                
+            })
+            .catch(error => {
+                console.error('Error performing speaker identification:', error);
+            });
+        }
+    </script>
+</body>
+</html>
